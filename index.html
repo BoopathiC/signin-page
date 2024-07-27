@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELECTRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="headline">ELECTRO</h1>
+            <div class="horizontal-line"></div>
+            <div class="options">
+                <span onclick="showForm('signin')">SIGN IN</span>
+                <div class="vertical-line"></div>
+                <span onclick="showForm('signup')">SIGN UP</span>
+            </div>
+        </header>
+
+        <div id="signin" class="form-container">
+            <h2>SIGN IN</h2>
+            <form>
+                <div class="input-container">
+                    <input type="email" id="email-signin" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password-signin" name="password" placeholder="Enter your password" required>
+                </div>
+                <p class="forgot-password"><a href="#" onclick="showForm('forgot-password')">Forgot Password?</a></p>
+            </form>
+            <button type="submit">SIGN IN</button>
+            <div class="social-login">
+                <button class="social-btn google">
+                    <img src="google-tile.svg" alt="Google Icon"> Sign in with Google
+                </button>
+                <button class="social-btn facebook">
+                    <img src="facebook-official.svg" alt="Facebook Icon"> Sign in with Facebook
+                </button>
+            </div>
+        </div>
+
+        <div id="signup" class="form-container">
+            <h2>SIGN UP</h2>
+            <form>
+                <div class="input-container">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-container">
+                    <input type="email" id="email-signup" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password-signup" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit">SIGN UP</button>
+            </form>
+            <div class="social-login">
+                <button class="social-btn google">
+                    <img src="google-tile.svg" alt="Google Icon"> Sign up with Google
+                </button>
+                <button class="social-btn facebook">
+                    <img src="facebook-official.svg" alt="Facebook Icon"> Sign up with Facebook
+                </button>
+            </div>
+        </div>
+
+        <div id="forgot-password" class="form-container">
+            <h2>FORGOT PASSWORD</h2>
+            <form>
+                <div class="input-container">
+                    <input type="email" id="email-forgot" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit">SEND RESET LINK</button>
+            </form>
+            <p><a href="#" onclick="showForm('signin')" id="back">Back to Sign In</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.style.display = 'none';
+            });
+            document.getElementById(formId).style.display = 'block';
+        }
+        document.getElementById('signin').style.display = 'block'; 
+        document.getElementById('signup').style.display = 'none';
+        document.getElementById('forgot-password').style.display = 'none';
+    </script>
+</body>
+</html>
